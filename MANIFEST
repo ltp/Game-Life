@@ -2,7 +2,11 @@ Life.pm
 MANIFEST
 Makefile.PL
 README
+t/00load.t
 t/01glider.t
 t/02stoplight.t
 t/03block.t
 t/compare-boards.pl
+t/manifest.t
+t/pod-coverage.t
+t/pod.t

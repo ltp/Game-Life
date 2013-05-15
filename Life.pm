@@ -4,13 +4,17 @@ package Game::Life;
 
 #=============================================================================
 #
-# $Id: Life.pm,v 0.05 2013/05/17 21:18:26 ltp Exp $
-# $Revision: 0.05 $
+# $Id: Life.pm,v 0.06 2013/05/16 08:55:32 ltp Exp $
+# $Revision: 0.06 $
 # $Author: ltp $
-# $Date: 2013/05/17 21:18:26 $
+# $Date: 2013/05/16 08:55:32 $
 # $Log: Life.pm,v $
 #
-# Revision 0.05  2013/05/17 21:18:29  ltp
+# Revision 0.06  2013/05/16 08:55:32  ltp
+#
+# Improved test coverage.
+#
+# Revision 0.05  2013/05/15 21:18:29  ltp
 #
 # Modified constructor to allow arbitrary sized game board.
 #
@@ -40,7 +44,7 @@ use Clone qw( clone );
 BEGIN {
     use Exporter   ();
     use vars       qw($VERSION @ISA @EXPORT %EXPORT_TAGS);
-    $VERSION     = sprintf( "%d.%02d", q($Revision: 0.05 $) =~ /\s(\d+)\.(\d+)/ );
+    $VERSION     = sprintf( "%d.%02d", q($Revision: 0.06 $) =~ /\s(\d+)\.(\d+)/ );
     @ISA         = qw(Exporter);
     @EXPORT      = qw();
     %EXPORT_TAGS = ( );
@@ -346,6 +350,8 @@ represented by 'X' and '.', respectively.  It's very easy to use this via:
 to follow the progress of the Life simulation, and should be faster than
 rolling your own based on get_grid.  
 
+=back
+
 =head1 NOTES
 
 Conway here is not Damien Conway of Perl fame, but John Horton Conway of
@@ -355,7 +361,11 @@ Martin Gardner (puzzle editor for I<Scientific American>) had for it.
 
 =head1 HISTORY
 
-    Revision 0.05  2013/05/17 21:18:26  ltp
+    Revision 0.06  2013/05/16 08:55:32  ltp
+
+    Improved test coverage.
+
+    Revision 0.05  2013/05/15 21:18:26  ltp
 
     Updated constructor to allow arbitrary sized game board.
 

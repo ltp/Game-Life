@@ -27,7 +27,7 @@ use Game::Life;
 
 require 't/compare-boards.pl';
 
-print "1..2\n";
+print "1..4\n";
 
 my @starting = qw(
 		  .....
@@ -44,7 +44,7 @@ my @ending = qw(
 		..... );
 
 
-my $game = new Game::Life( 5 );
+my $game = Game::Life->new( 5 );
 $game->place_text_points( 0, 0, 'X', @starting );
 $game->process( 11 );
 my @real_end = $game->get_text_grid( 'X', '.' );
@@ -54,41 +54,26 @@ $game->process( 11 );
 @real_end = $game->get_text_grid( 'X', '.' );
 print compare_boards( \@starting, \@real_end ) ? "ok 2\n" : "not ok 2\n";
 
+@starting = qw(
+		  ..........
+		  ....X.....
+		  ....X.....
+		  ....X.....
+		  .......... );
 
+@ending = qw(
+		..........
+		..........
+		...XXX....
+		..........
+		.......... );
 
+$game = Game::Life->new( [10,5] );
+$game->place_text_points( 0, 0, 'X', @starting );
+$game->process( 11 );
+@real_end = $game->get_text_grid( 'X', '.' );
+print compare_boards( \@ending, \@real_end ) ? "ok 3\n" : "not ok 3\n";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$game->process( 11 );
+@real_end = $game->get_text_grid( 'X', '.' );
+print compare_boards( \@starting, \@real_end ) ? "ok 4\n" : "not ok 4\n";
