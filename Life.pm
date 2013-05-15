@@ -4,17 +4,19 @@ package Game::Life;
 
 #=============================================================================
 #
-# $Id: Life.pm,v 0.04 2001/07/04 02:49:29 mneylon Exp $
-# $Revision: 0.04 $
-# $Author: mneylon $
-# $Date: 2001/07/04 02:49:29 $
+# $Id: Life.pm,v 0.05 2013/05/17 21:18:26 ltp Exp $
+# $Revision: 0.05 $
+# $Author: ltp $
+# $Date: 2013/05/17 21:18:26 $
 # $Log: Life.pm,v $
+#
+# Revision 0.05  2013/05/17 21:18:29  ltp
+#
+# Modified constructor to allow arbitrary sized game board.
+#
 # Revision 0.04  2001/07/04 02:49:29  mneylon
 #
 # Fixed distribution problem
-#
-# Revision 0.03  2013/05/01 ltp
-# Modified constructor to accept arrayref board size
 #
 # Revision 0.03  2001/07/04 02:27:55  mneylon
 #
@@ -206,6 +208,8 @@ sub _determine_life_status {
 	    ? 'keep_criteria' : 'breed_criteria' } } );
 }
 
+42;
+
 __END__
 
 =pod 
@@ -351,9 +355,10 @@ Martin Gardner (puzzle editor for I<Scientific American>) had for it.
 
 =head1 HISTORY
 
-    $Date: 2001/07/04 02:49:29 $
+    Revision 0.05  2013/05/17 21:18:26  ltp
 
-    $Log: Life.pm,v $
+    Updated constructor to allow arbitrary sized game board.
+
     Revision 0.04  2001/07/04 02:49:29  mneylon
 
     Fixed distribution problem
@@ -400,6 +405,3 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 =cut
-
-42;
-
