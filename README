@@ -1,4 +1,4 @@
-Game/Life $Revision: 0.04 $
+Game/Life $Revision: 0.05 $
 ======================
 
 Game::Life is a Perl module to implement Conway's Game of Life.
